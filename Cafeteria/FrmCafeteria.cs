@@ -52,48 +52,45 @@ namespace APP3C.Cafeteria
             string nombreBebida = txtNombreBebida.Text;
             float precio = float.Parse(txtPrecio.Text.Trim()); 
             string tamanio = cmbTamanio.SelectedItem.ToString();
-            float extra;
+            string extra = txtExtra.Text.Trim();
+            string extra2 = "";
 
             if (lblExtra2.Visible)
             {
-                extra = float.Parse(txtExtra.Text.Trim());
-
-            }
-            else {
-                string ingrediente = txtExtra.Text.Trim();
-
+                extra2 = txtExtra2.Text.Trim();
             }
 
             //elige el tipo de bebida
             if (rdbFria.Checked)
             {
-
-                bebidas.Add(new BebidaCaliente(nombreBebida, tamanio, precio, extra));
+                float temperatura = float.Parse(extra);
+                bebidas.Add(new BebidaCaliente(nombreBebida, tamanio, precio, temperatura));
             }
             else if (rdbCaliente.Checked)
             {
-                int cantHielos = (int)extra;
+                int cantHielos = int.Parse(extra);
                 bebidas.Add(new BebidaFria(nombreBebida, tamanio, precio, cantHielos));
             }
             else
             {
-                float extra2 = float.Parse(txtExtra2.Text.Trim());
                 if (rdbAlcohol.Checked)
                 {
                     //bebida es alcoholica
-                    int tiempoAniejo = (int)extra2;
-                    bebidas.Add(new BebidaAlcoholica(nombreBebida, tamanio, precio, extra, tiempoAniejo));
+                    float cantAlochol = float.Parse(extra);
+                    int tiempoAniejo = int.Parse(extra2);
+                    bebidas.Add(new BebidaAlcoholica(nombreBebida, tamanio, precio, cantAlochol, tiempoAniejo));
                 }
                 else if (rdbEnergetica.Checked)
                 {
                     //bebida es energetica
-                    bebidas.Add(new BebidaEnergetica(nombreBebida, tamanio, precio, extra, extra2));
+                    float cantAzucar = float.Parse(extra);
+                    float cantTaurina = float.Parse(extra2);
+                    bebidas.Add(new BebidaEnergetica(nombreBebida, tamanio, precio, cantAzucar, cantTaurina));
                 }
                 else
                 {
                     //bebida artesanal
-                    string origen = Convert.ToString(extra2);
-                    bebidas.Add(new BebidaArtesanal(nombreBebida, tamanio, precio, ingrediente, origen));
+                    bebidas.Add(new BebidaArtesanal(nombreBebida, tamanio, precio, extra, extra2));
                 }
             }
 
@@ -118,7 +115,6 @@ namespace APP3C.Cafeteria
                 BebidaArtesanal artesanal = (BebidaArtesanal)bebidas[bebidas.Count - 1];
                 lsbLista.Items.Add(artesanal.listar());
             }
-
 
             MessageBox.Show($"Bebida agregada correctamente, tienes: {bebidas.Count} bebidas registradas");
             LimpiarCajas();

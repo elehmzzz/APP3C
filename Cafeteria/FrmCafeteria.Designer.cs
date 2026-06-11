@@ -51,6 +51,7 @@
             this.lsbLista = new System.Windows.Forms.ListBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,7 +93,7 @@
             this.panel1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(20, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 581);
+            this.panel1.Size = new System.Drawing.Size(409, 565);
             this.panel1.TabIndex = 8;
             // 
             // txtExtra2
@@ -129,7 +130,7 @@
             // lblExtra2
             // 
             this.lblExtra2.AutoSize = true;
-            this.lblExtra2.Location = new System.Drawing.Point(178, 398);
+            this.lblExtra2.Location = new System.Drawing.Point(179, 398);
             this.lblExtra2.Name = "lblExtra2";
             this.lblExtra2.Size = new System.Drawing.Size(178, 36);
             this.lblExtra2.TabIndex = 14;
@@ -149,7 +150,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(25, 515);
+            this.btnAgregar.Location = new System.Drawing.Point(21, 508);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(123, 34);
             this.btnAgregar.TabIndex = 10;
@@ -268,12 +269,13 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lsbLista);
             this.panel2.Controls.Add(this.lblCantidad);
             this.panel2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(15, 45);
+            this.panel2.Location = new System.Drawing.Point(6, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 413);
+            this.panel2.Size = new System.Drawing.Size(441, 413);
             this.panel2.TabIndex = 2;
             // 
             // lsbLista
@@ -282,17 +284,26 @@
             this.lsbLista.ItemHeight = 36;
             this.lsbLista.Location = new System.Drawing.Point(3, 25);
             this.lsbLista.Name = "lsbLista";
-            this.lsbLista.Size = new System.Drawing.Size(414, 292);
+            this.lsbLista.Size = new System.Drawing.Size(435, 292);
             this.lsbLista.TabIndex = 0;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(15, 345);
+            this.lblCantidad.Location = new System.Drawing.Point(107, 345);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(98, 36);
+            this.lblCantidad.Size = new System.Drawing.Size(31, 36);
             this.lblCantidad.TabIndex = 16;
-            this.lblCantidad.Text = "Cantidad:";
+            this.lblCantidad.Text = "--";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 345);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 36);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Cantidad:";
             // 
             // FrmCafeteria
             // 
@@ -342,5 +353,6 @@
         private System.Windows.Forms.ListBox lsbLista;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }
